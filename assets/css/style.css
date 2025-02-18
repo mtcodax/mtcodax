@@ -78,13 +78,39 @@ ul li {
 }
 body {
     background: var(--primary-color);
+    position: relative;
 }
+body::before {
+    position: fixed;
+    content: '';
+    top: -80vh;
+    left: -80vw;
+    width: 260vw;
+    height: 260vh;
+    background: radial-gradient(circle at 0% 50%, rgba(255, 100, 50, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 50% 100%, rgba(50, 200, 255, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 100% 50%, rgba(255, 50, 200, 0.15) 0%, transparent 50%);
+}
+body::before {
+    animation: rotateBackground 60s linear infinite;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .container{
     position: relative;
 }
 button {
     background-color: transparent;
 }
+
 /*-----------------------[ 2.Light Mode Colors CSS ]------------------------*/
 :root {
     --primary-color: #EDF0F4;
@@ -101,8 +127,8 @@ button {
 }
 .dark-mode {
     --primary-color: #000000;
-    --side-menu-color: #1E1F21;
-    --section-background: #1E1F21;
+    --side-menu-color: #1E1F21AA;
+    --section-background: #1E1F21AA;
     --icons-background: #000000;
     --main-text: #FFFFFF;
     --sub-text: #838485;
@@ -310,6 +336,7 @@ body.dark-mode .hireMe-svg-side {
 }
 .portfolio-girl-menu-main img {
     border-radius: 50%;
+    z-index: 1;
 }
 #mainHeader {
     position: sticky;
@@ -392,6 +419,7 @@ body.dark-mode .hireMe-svg-side {
     padding: 30px;
     border-radius: 30px;
     margin-bottom: 20px;
+    backdrop-filter: blur(12px);
 }
 .side-menu-ul li a.active {
     background: #FFF;
@@ -460,10 +488,29 @@ body.dark-mode .hireMe-svg-side {
 .section-Seven,
 .section-eight,
 .section-nine {
-    background: var(--section-background);
     padding: 60px;
-    border-radius: 30px;
     margin-bottom: 30px;
+    position: relative;
+}
+.section-one:before,
+.section-two:before,
+.section-three:before,
+.section-four:before,
+.section-five:before,
+.section-six:before,
+.section-Seven:before,
+.section-eight:before,
+.section-nine:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--section-background);
+    backdrop-filter: blur(12px);
+    z-index: -1;
+    border-radius: 30px;
 }
 .hi-there {
     color: var(--main-text);
@@ -814,7 +861,7 @@ body.dark-mode .hireMe-svg-side {
 }
 .content-img {
     max-width: 100%;
-    border-radius: 30px;
+    border-radius: 12px;
 }
 .modal {
     --bs-modal-width: 700px;
@@ -868,7 +915,7 @@ body.dark-mode .hireMe-svg-side {
     line-height: 24px;
 }
 .ipsum {
-    color: var(--3, #838485);
+    /* color: var(--3, #838485); */
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
