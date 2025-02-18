@@ -87,9 +87,10 @@ body::before {
     left: -80vw;
     width: 260vw;
     height: 260vh;
-    background: radial-gradient(circle at 0% 50%, rgba(255, 100, 50, 0.15) 0%, transparent 50%),
-               radial-gradient(circle at 50% 100%, rgba(50, 200, 255, 0.15) 0%, transparent 50%),
-               radial-gradient(circle at 100% 50%, rgba(255, 50, 200, 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 0% 0%, rgba(255, 0, 150, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 100% 0%, rgba(0, 255, 150, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 0% 100%, rgba(150, 0, 255, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 100% 100%, rgba(255, 150, 0, 0.15) 0%, transparent 50%);
 }
 body::before {
     animation: rotateBackground 60s linear infinite;
