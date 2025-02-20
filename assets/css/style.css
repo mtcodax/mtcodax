@@ -476,6 +476,11 @@ body.dark-mode .hireMe-svg-side {
     background: #FFF;
     transition: all 0.3s ease-in-out;
 }
+.media-icons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
 .media-icons:hover img {
     filter: brightness(0) saturate(100%) invert(11%) sepia(1%) saturate(1367%) hue-rotate(161deg) brightness(98%) contrast(97%);
 }
